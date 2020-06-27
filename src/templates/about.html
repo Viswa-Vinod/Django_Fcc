@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    <p>This is a template</p>
+    <span>{{ phone|phone2numeric }}, {{ location|capfirst }}</span> 
+    <p style = "color: purple">People in the organization</p>
+        <ul>
+            {% for person in people %}
+                {% if person == "Vinod" %}
+                    <li style="list-style: none">
+                        <strong>{{forloop.counter}} - {{ person|capfirst }} </strong>
+                    </li>
+                {% else %}
+                    <li style="list-style: none">
+                        {{forloop.counter}} - {{ person }} 
+                    </li>
+                {% endif %}    
+            {% endfor %}
+        </ul>
+{% endblock %}

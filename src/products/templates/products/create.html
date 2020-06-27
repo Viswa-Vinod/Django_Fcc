@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Create/Update Product</h1>
+<form method='POST'>
+    <!-- csrf is required in django for post methods -->
+
+    <!-- The below line is the way to add raw html input fields in django -->
+    <!-- <input type='text' name='title_raw' placeholder='product title' /> {% csrf_token %}  -->
+    
+    <!-- this is the way to add a form defined in forms.py through django. as_p stands for render form as p tags -->
+    {% csrf_token %}
+    {{ form.as_p }} 
+    <input type='submit' value='Save' />
+</form>
+{% endblock %}
